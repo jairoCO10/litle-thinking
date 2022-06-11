@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://jairoco0901.pythonanywhere.com/api/datos-empresa/",
+  "proxy": "http://localhost:8000/api/datos-empresas/",
   "dependencies": {
     "@material-ui/core": "^4.12.4",
     "axios": "^0.18.0",
