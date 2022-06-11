@@ -21,7 +21,7 @@ class App extends Component {
   }
   refreshList = () => {
     axios
-      .get("http://localhost:8000/api/todos/")
+      .get("https://jairoco0901.pythonanywhere.com/api/datos-empresa/")
       .then(res => this.setState({ empresas: res.data }))
       .catch(err => console.log(err));
   };
@@ -72,17 +72,17 @@ class App extends Component {
     this.toggle();
     if (item.id) {
       axios
-        .put(`http://localhost:8000/api/todos/${item.id}/`, item)
+        .put(`https://jairoco0901.pythonanywhere.com/api/datos-empresa/${item.id}/`, item)
         .then(res => this.refreshList());
       return;
     }
     axios
-      .post("http://localhost:8000/api/todos/", item)
+      .post("https://jairoco0901.pythonanywhere.com/api/datos-empresa/", item)
       .then(res => this.refreshList());
   };
   handleDelete = item => {
     axios
-      .delete(`http://localhost:8000/api/todos/${item.id}`)
+      .delete(`https://jairoco0901.pythonanywhere.com/api/datos-empresa/${item.id}`)
       .then(res => this.refreshList());
   };
   createItem = () => {
