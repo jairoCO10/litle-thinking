@@ -6,10 +6,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      viewCompleted: false,
       activeItem: {
         nombre_empresa: "",
-        completed: "",
         direccion: "",
         nit: "",
         telefono: ""
@@ -73,17 +71,17 @@ class App extends Component {
     this.toggle();
     if (item.id) {
       axios
-        .put(`http://localhost:8000/api/datos-empresas//${item.id}/`, item)
+        .put(`http://localhost:8000/api/todos/${item.id}/`, item)
         .then(res => this.refreshList());
       return;
     }
     axios
-      .post("http://localhost:8000/api/datos-empresas/", item)
+      .post("http://localhost:8000/api/todos/", item)
       .then(res => this.refreshList());
   };
   handleDelete = item => {
     axios
-      .delete(`http://localhost:8000/api/datos-empresas/${item.id}`)
+      .delete(`http://localhost:8000/api/todos/${item.id}`)
       .then(res => this.refreshList());
   };
   createItem = () => {
